@@ -114,7 +114,7 @@ function vardump(value, depth, key)
   elseif type(value)  == 'function' or
     type(value) == 'thread' or
     type(value) == 'userdata' or
-    value == nil then --@MuteTeam
+    value == nil then 
     print(spaces .. tostring(value))
   elseif type(value)  == 'string' then
     print(spaces .. linePrefix .. '"' .. tostring(value) .. '",')
@@ -321,7 +321,7 @@ local res = http.request(database.."joke.db")
 	local joke = res:split(",")
  if input:match'[!/#](joke)' then
  local run = joke[math.random(#joke)]
- tdcli.sendText(chat_id, msg.id_, 0, 1, nil, run..'\n\n*By MuteTeam*', 1, 'md')
+ tdcli.sendText(chat_id, msg.id_, 0, 1, nil, run..'\n\n', 1, 'md')
  end
       ---------------------------------------------------------------------------------------------------------------------------------
       if input:match("^[#!/][Aa]dd$") and is_sudo(msg) then
@@ -1007,7 +1007,7 @@ local res = http.request(database.."joke.db")
         .."*Mute Video : *".."`"..video.."`".."\n"
         .."*Mute Document : *".."`"..document.."`".."\n"
         .."*Mute Text : *".."`"..text1.."`".."\n"
-        .."*Mute Team* - @MuteTeam"
+
         tdcli.sendText(chat_id, msg.id_, 0, 1, nil, text, 1, 'md')
       end
       if input:match("^[#!/][Ff]wd$") then
@@ -1199,7 +1199,7 @@ if redis:get('edittg:'..data.chat_id_) then
 end
   elseif (data.ID == "UpdateOption" and data.name_ == "my_id") then
 
-    -- @MuteTeam
+
     tdcli_function ({
       ID="GetChats",
       offset_order_="9223372036854775807",
